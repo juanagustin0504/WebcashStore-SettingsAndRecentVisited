@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController_sid" id="BYZ-38-t0r" customClass="MainViewController" customModule="WebcashStore_SettingsAndRecentVisited" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzl-LZ-Koq">
+                                <rect key="frame" x="0.0" y="412" width="414" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <action selector="gotoSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o22-tR-qiM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Yzl-LZ-Koq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Yx-OG-eAm"/>
+                            <constraint firstItem="Yzl-LZ-Koq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ABF-91-W0b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yzl-LZ-Koq" secondAttribute="trailing" id="FcW-e4-UO6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="r1s-pR-eio">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController_sid" id="y04-83-tN8" customClass="SettingsViewController" customModule="WebcashStore_SettingsAndRecentVisited" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rHI-mk-qT2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uby-Iy-9wb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="7pR-iw-yla"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHZ-HE-0Ck">
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WHZ-HE-0Ck" firstAttribute="top" secondItem="Uby-Iy-9wb" secondAttribute="bottom" symbolic="YES" id="9pH-Hv-5BR"/>
+                            <constraint firstItem="Uby-Iy-9wb" firstAttribute="leading" secondItem="aC7-Ek-6J7" secondAttribute="leading" id="Cuz-X6-weC"/>
+                            <constraint firstItem="WHZ-HE-0Ck" firstAttribute="leading" secondItem="aC7-Ek-6J7" secondAttribute="leading" id="Hql-tb-cxQ"/>
+                            <constraint firstItem="Uby-Iy-9wb" firstAttribute="top" secondItem="aC7-Ek-6J7" secondAttribute="top" id="Slp-cT-4l4"/>
+                            <constraint firstItem="aC7-Ek-6J7" firstAttribute="bottom" secondItem="WHZ-HE-0Ck" secondAttribute="bottom" id="W0m-7d-mk4"/>
+                            <constraint firstItem="aC7-Ek-6J7" firstAttribute="trailing" secondItem="Uby-Iy-9wb" secondAttribute="trailing" id="du3-JL-f8y"/>
+                            <constraint firstItem="aC7-Ek-6J7" firstAttribute="trailing" secondItem="WHZ-HE-0Ck" secondAttribute="trailing" id="lS5-6S-ppG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aC7-Ek-6J7"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentsView" destination="WHZ-HE-0Ck" id="NaL-Bg-VbT"/>
+                        <outlet property="navView" destination="Uby-Iy-9wb" id="EkN-w6-ivM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxH-5m-Ez1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085.5072463768117" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
