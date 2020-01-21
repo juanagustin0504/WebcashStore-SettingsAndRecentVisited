@@ -24,9 +24,9 @@ class SettingViewController: UIViewController {
         let selectedLanguage: Languages
         switch sender.tag {
         case 1:
-            selectedLanguage = .ko
-        case 2:
             selectedLanguage = .km
+        case 2:
+            selectedLanguage = .ko
         default:
             selectedLanguage = .en
         }

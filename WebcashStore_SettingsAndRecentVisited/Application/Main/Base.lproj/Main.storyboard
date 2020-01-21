@@ -139,28 +139,28 @@
                                     <rect key="frame" x="0.0" y="541.5" width="414" height="154"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHJ-zJ-Q0f">
-                                            <rect key="frame" x="320" y="26" width="50" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="English"/>
-                                            <connections>
-                                                <action selector="changeLanguage:" destination="bMH-Ov-aaz" eventType="touchUpInside" id="HhV-SW-cEK"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMh-Dl-urG">
-                                            <rect key="frame" x="321" y="64" width="48" height="30"/>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMh-Dl-urG">
+                                            <rect key="frame" x="235" y="64" width="48" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Korean"/>
                                             <connections>
                                                 <action selector="changeLanguage:" destination="bMH-Ov-aaz" eventType="touchUpInside" id="bPi-Bq-vhJ"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3g-LP-hQx">
-                                            <rect key="frame" x="323" y="102" width="45" height="30"/>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3g-LP-hQx">
+                                            <rect key="frame" x="237" y="26" width="45" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Khmer"/>
                                             <connections>
                                                 <action selector="changeLanguage:" destination="bMH-Ov-aaz" eventType="touchUpInside" id="erX-WM-6bW"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHJ-zJ-Q0f">
+                                            <rect key="frame" x="234" y="102" width="50" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="English"/>
+                                            <connections>
+                                                <action selector="changeLanguage:" destination="bMH-Ov-aaz" eventType="touchUpInside" id="HhV-SW-cEK"/>
                                             </connections>
                                         </button>
                                     </subviews>
