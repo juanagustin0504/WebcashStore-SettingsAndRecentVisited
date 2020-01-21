@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,7 +50,6 @@
 				D6B1E16B22D953DD14F583D1 /* Pods-WebcashStore_SettingsAndRecentVisited.debug.xcconfig */,
 				0658E39DEE6DF45A4856C67D /* Pods-WebcashStore_SettingsAndRecentVisited.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -75,8 +74,9 @@
 		766B397523D5A16000F2DA5F /* WebcashStore_SettingsAndRecentVisited */ = {
 			isa = PBXGroup;
 			children = (
+				76F038C623D6818E00B63C06 /* Resource */,
+				76F038C523D6818600B63C06 /* AppDelegate */,
 				766B398A23D5A18C00F2DA5F /* Application */,
-				766B398B23D5A1A500F2DA5F /* View */,
 			);
 			path = WebcashStore_SettingsAndRecentVisited;
 			sourceTree = "<group>";
@@ -84,21 +84,12 @@
 		766B398A23D5A18C00F2DA5F /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				766B397623D5A16000F2DA5F /* AppDelegate.swift */,
-				766B397823D5A16000F2DA5F /* SceneDelegate.swift */,
-				766B397F23D5A16000F2DA5F /* Assets.xcassets */,
-				766B398123D5A16000F2DA5F /* LaunchScreen.storyboard */,
-				766B398423D5A16100F2DA5F /* Info.plist */,
+				766B398F23D5A1CE00F2DA5F /* Settings */,
+				76F038C723D681AE00B63C06 /* Launch */,
+				766B398C23D5A1AE00F2DA5F /* Main */,
+				766B399023D5A1D800F2DA5F /* RecentVisited */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		766B398B23D5A1A500F2DA5F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				766B398C23D5A1AE00F2DA5F /* Main */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		766B398C23D5A1AE00F2DA5F /* Main */ = {
@@ -106,8 +97,6 @@
 			children = (
 				766B397C23D5A16000F2DA5F /* Main.storyboard */,
 				766B398D23D5A1C900F2DA5F /* MainViewController.swift */,
-				766B398F23D5A1CE00F2DA5F /* Settings */,
-				766B399023D5A1D800F2DA5F /* RecentVisited */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -125,6 +114,32 @@
 			children = (
 			);
 			path = RecentVisited;
+			sourceTree = "<group>";
+		};
+		76F038C523D6818600B63C06 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				766B397623D5A16000F2DA5F /* AppDelegate.swift */,
+				766B397823D5A16000F2DA5F /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		76F038C623D6818E00B63C06 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				766B397F23D5A16000F2DA5F /* Assets.xcassets */,
+				766B398423D5A16100F2DA5F /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		76F038C723D681AE00B63C06 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				766B398123D5A16000F2DA5F /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		91D6BC16AA116BAB3F78CA5E /* Frameworks */ = {
