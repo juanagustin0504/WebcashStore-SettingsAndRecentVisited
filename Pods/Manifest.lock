@@ -1,0 +1,16 @@
+PODS:
+  - LanguageManager-iOS (1.2.0)
+
+DEPENDENCIES:
+  - LanguageManager-iOS
+
+SPEC REPOS:
+  trunk:
+    - LanguageManager-iOS
+
+SPEC CHECKSUMS:
+  LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
+
+PODFILE CHECKSUM: 688838c48de8c4918436586ac9f22c45d66acbd7
+
+COCOAPODS: 1.8.4
