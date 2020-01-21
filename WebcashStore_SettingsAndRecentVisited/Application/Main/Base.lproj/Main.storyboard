@@ -190,7 +190,6 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="bMH-Ov-aaz" id="aQC-nF-8ua"/>
-                                    <outlet property="delegate" destination="bMH-Ov-aaz" id="aWD-OI-Tfe"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHh-fI-zqQ">

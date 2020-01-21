@@ -1,0 +1,16 @@
+/* 
+  Settings.strings
+  WebcashStore_SettingsAndRecentVisited
+
+  Created by Webcash on 2020/01/21.
+  Copyright © 2020 WebCash. All rights reserved.
+*/
+
+
+"title" = "Settings";
+"notification_title" = "Notification";
+"nofitication_content" = "Get notified for new app news";
+"display_language_title" = "Display Language";
+"display_language_content" = "Choose your language";
+"about_us_title" = "About Us";
+"about_us_content" = "Made by love from KOSIGN. Phnom Penh.";

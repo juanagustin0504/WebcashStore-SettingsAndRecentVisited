@@ -1,0 +1,16 @@
+/* 
+  Settings.strings
+  WebcashStore_SettingsAndRecentVisited
+
+  Created by Webcash on 2020/01/21.
+  Copyright © 2020 WebCash. All rights reserved.
+*/
+
+
+"title" = "រៀបចំ";
+"notification_title" = "ការជូនដំណឹង";
+"nofitication_content" = "ទទួលបានដំណឹងសម្រាប់ព័ត៌មានកម្មវិធីថ្មី";
+"display_language_title" = "បង្ហាញភាសា";
+"display_language_content" = "ជ្រើសរើសភាសារបស់អ្នក";
+"about_us_title" = "អំពី​ពួក​យើង";
+"about_us_content" = "ផលិតដោយក្តីស្រឡាញ់ពី KOSIGN ។ ភ្នំពេញ។";
