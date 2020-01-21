@@ -11,6 +11,7 @@ import LanguageManager_iOS
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var lblHello: UILabel!
     
     @IBOutlet weak var navView: UIView!
     @IBOutlet weak var settingsView: UIView!
@@ -43,14 +44,17 @@ class SettingsViewController: UIViewController {
             selectedLanguage = .en
         }
         
-        LanguageManager.shared.setLanguage(language: selectedLanguage, for: nil, viewControllerFactory: { title -> UIViewController in
-            print(title ?? "")
-            let mainSb = UIStoryboard(name: "Main", bundle: nil)
-            return mainSb.instantiateInitialViewController()!
-        }) { view in
-            view.transform = CGAffineTransform(scaleX: 2, y: 2)
-            view.alpha = 0
-        }
+        LanguageManager.shared.setLanguage(language: selectedLanguage, for: nil, viewControllerFactory: nil, animation: nil)
+//        LanguageManager.shared.setLanguage(language: selectedLanguage, for: nil, viewControllerFactory: { title -> UIViewController in
+//            print(title ?? "")
+//            let mainSb = UIStoryboard(name: "Main", bundle: nil)
+//            return mainSb.instantiateInitialViewController()!
+//            return self
+//        }) { view in
+//            view.transform = CGAffineTransform(scaleX: 2, y: 2)
+//            view.alpha = 0
+//        }
+        self.viewDidLoad()
     }
     
 }
