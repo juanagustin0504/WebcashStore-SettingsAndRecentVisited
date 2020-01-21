@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LanguageManager_iOS
 
 class SettingsViewController: UIViewController {
     
@@ -29,16 +30,28 @@ class SettingsViewController: UIViewController {
         settingsView.layer.mask = maskLayer
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    @IBAction func changeLanguage(_ sender: UIButton) {
+        
+        let selectedLanguage: Languages
+        
+        switch sender.tag {
+        case 1:
+            selectedLanguage = .ko
+        case 2:
+            selectedLanguage = .km
+        default:
+            selectedLanguage = .en
+        }
+        
+        LanguageManager.shared.setLanguage(language: selectedLanguage, for: nil, viewControllerFactory: { title -> UIViewController in
+            print(title ?? "")
+            let mainSb = UIStoryboard(name: "Main", bundle: nil)
+            return mainSb.instantiateInitialViewController()!
+        }) { view in
+            view.transform = CGAffineTransform(scaleX: 2, y: 2)
+            view.alpha = 0
+        }
+    }
     
 }
 

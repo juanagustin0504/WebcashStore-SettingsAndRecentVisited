@@ -14,6 +14,7 @@
 		766B398323D5A16000F2DA5F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 766B398123D5A16000F2DA5F /* LaunchScreen.storyboard */; };
 		766B398E23D5A1C900F2DA5F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766B398D23D5A1C900F2DA5F /* MainViewController.swift */; };
 		766B399223D5A2E700F2DA5F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766B399123D5A2E700F2DA5F /* SettingsViewController.swift */; };
+		76F038CA23D6828E00B63C06 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76F038CC23D6828E00B63C06 /* Localizable.strings */; };
 		CC1C661A742908C50F474989 /* Pods_WebcashStore_SettingsAndRecentVisited.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96BBB3876F3002DA77C1409 /* Pods_WebcashStore_SettingsAndRecentVisited.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,9 @@
 		766B398423D5A16100F2DA5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		766B398D23D5A1C900F2DA5F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		766B399123D5A2E700F2DA5F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		76F038CB23D6828E00B63C06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		76F038CD23D6829D00B63C06 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		76F038CE23D682B800B63C06 /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D6B1E16B22D953DD14F583D1 /* Pods-WebcashStore_SettingsAndRecentVisited.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebcashStore_SettingsAndRecentVisited.debug.xcconfig"; path = "Target Support Files/Pods-WebcashStore_SettingsAndRecentVisited/Pods-WebcashStore_SettingsAndRecentVisited.debug.xcconfig"; sourceTree = "<group>"; };
 		E96BBB3876F3002DA77C1409 /* Pods_WebcashStore_SettingsAndRecentVisited.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebcashStore_SettingsAndRecentVisited.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				766B399123D5A2E700F2DA5F /* SettingsViewController.swift */,
+				76F038CC23D6828E00B63C06 /* Localizable.strings */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -194,6 +199,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
+				km,
 			);
 			mainGroup = 766B396A23D5A16000F2DA5F;
 			productRefGroup = 766B397423D5A16000F2DA5F /* Products */;
@@ -211,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				766B398323D5A16000F2DA5F /* LaunchScreen.storyboard in Resources */,
+				76F038CA23D6828E00B63C06 /* Localizable.strings in Resources */,
 				766B398023D5A16000F2DA5F /* Assets.xcassets in Resources */,
 				766B397E23D5A16000F2DA5F /* Main.storyboard in Resources */,
 			);
@@ -291,6 +299,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		76F038CC23D6828E00B63C06 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76F038CB23D6828E00B63C06 /* en */,
+				76F038CD23D6829D00B63C06 /* ko */,
+				76F038CE23D682B800B63C06 /* km */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -298,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -358,6 +377,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -416,7 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DL7DPUW7R9;
-				INFOPLIST_FILE = WebcashStore_SettingsAndRecentVisited/Application/Info.plist;
+				INFOPLIST_FILE = WebcashStore_SettingsAndRecentVisited/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,7 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DL7DPUW7R9;
-				INFOPLIST_FILE = WebcashStore_SettingsAndRecentVisited/Application/Info.plist;
+				INFOPLIST_FILE = WebcashStore_SettingsAndRecentVisited/Resource/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

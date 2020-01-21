@@ -68,9 +68,35 @@
                                 <rect key="frame" x="0.0" y="108" width="414" height="754"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2f-n8-TEj">
-                                        <rect key="frame" x="318" y="266" width="46" height="30"/>
+                                        <rect key="frame" x="316" y="266" width="50" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="English"/>
+                                        <connections>
+                                            <action selector="changeLanguage:" destination="y04-83-tN8" eventType="touchUpInside" id="lQo-AF-58f"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCQ-Ig-b8b">
+                                        <rect key="frame" x="317" y="304" width="48" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Korean"/>
+                                        <connections>
+                                            <action selector="changeLanguage:" destination="y04-83-tN8" eventType="touchUpInside" id="nLO-9j-5f0"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iji-zU-ktj">
+                                        <rect key="frame" x="188" y="104" width="39" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sx5-6D-m2f">
+                                        <rect key="frame" x="319" y="342" width="45" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Khmer"/>
+                                        <connections>
+                                            <action selector="changeLanguage:" destination="y04-83-tN8" eventType="touchUpInside" id="8JY-ja-yVl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,7 +104,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="WHZ-HE-0Ck" firstAttribute="top" secondItem="Uby-Iy-9wb" secondAttribute="bottom" symbolic="YES" id="9pH-Hv-5BR"/>
+                            <constraint firstItem="WHZ-HE-0Ck" firstAttribute="top" secondItem="Uby-Iy-9wb" secondAttribute="bottom" constant="8" symbolic="YES" id="9pH-Hv-5BR"/>
                             <constraint firstItem="Uby-Iy-9wb" firstAttribute="leading" secondItem="aC7-Ek-6J7" secondAttribute="leading" id="Cuz-X6-weC"/>
                             <constraint firstItem="WHZ-HE-0Ck" firstAttribute="leading" secondItem="aC7-Ek-6J7" secondAttribute="leading" id="Hql-tb-cxQ"/>
                             <constraint firstItem="Uby-Iy-9wb" firstAttribute="top" secondItem="aC7-Ek-6J7" secondAttribute="top" id="Slp-cT-4l4"/>
