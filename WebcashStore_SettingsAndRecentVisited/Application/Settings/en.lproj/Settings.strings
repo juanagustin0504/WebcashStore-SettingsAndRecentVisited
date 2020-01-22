@@ -7,10 +7,58 @@
 */
 
 
-"title" = "Settings";
-"notification_title" = "Notification";
-"nofitication_content" = "Get notified for new app news";
-"display_language_title" = "Display Language";
-"display_language_content" = "Choose your language";
-"about_us_title" = "About Us";
-"about_us_content" = "Made by love from KOSIGN. Phnom Penh.";
+// ----------- Footer and Launch Screen
+"copyright © 2020 WEBCASH" = "copyright © 2020 WEBCASH";
+
+// ----------- Menu
+"recent_visited"="Recent visited";
+"home"="Home";
+"settings"="Settings";
+
+// ----------- Home Menu
+"search_for_apps"="Search for apps";
+"list_of_all_apps"="List of all Apps";
+"get"="GET";
+"server_real"="Server Real";
+"server_develop"="Server Develop";
+
+// ----------- Time formate
+"years_ago"="years ago";
+"months_ago"="months ago";
+"days_ago"="days ago";
+"hours_ago"="hours ago";
+"minutes_ago"="minutes ago";
+"seconds_ago"="second ago";
+"year_ago"="year ago";
+"month_ago"="month ago";
+"day_ago"="day ago";
+"hour_ago"="hour ago";
+"minute_ago"="minute ago";
+"second_ago"="seconds ago";
+
+"moment_ago"="a moment ago";
+
+// ----------- Filter Popup
+"sort_the_list_by"="Sort the list by :";
+"last_update"="Last update";
+"a_to_z"="A to Z";
+"z_to_a"="Z to A";
+"select_list_styles_by"="Select list styles by :";
+"apply_filter"="Apply Filter";
+
+// ----------- Quick Detail
+"latest_version"="Latest version :";
+"real"="Real";
+"develop"="Develop";
+"list_of_all_app_version"="List of all app’s version";
+"version"="version :";
+
+// ----------- Settings
+"notification"="Notification";
+"notification_detail"="Get notified for new app news";
+"display_language"="Display Language";
+"choose_language"="Choose your language";
+"about_us"="About Us";
+"about_us_detail"="Made by love from Phnom Penh, Cambodia.";
+
+"loading"="Loading…";

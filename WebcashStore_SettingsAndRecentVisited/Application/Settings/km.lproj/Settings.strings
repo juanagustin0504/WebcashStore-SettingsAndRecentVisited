@@ -7,10 +7,58 @@
 */
 
 
-"title" = "រៀបចំ";
-"notification_title" = "ការជូនដំណឹង";
-"nofitication_content" = "ទទួលបានដំណឹងសម្រាប់ព័ត៌មានកម្មវិធីថ្មី";
-"display_language_title" = "បង្ហាញភាសា";
-"display_language_content" = "ជ្រើសរើសភាសារបស់អ្នក";
-"about_us_title" = "អំពី​ពួក​យើង";
-"about_us_content" = "ផលិតដោយក្តីស្រឡាញ់ពី KOSIGN ។ ភ្នំពេញ។";
+// ----------- Footer and Launch Screen
+"copyright © 2020 WEBCASH" = "រក្សាសិទ្ធិ© ២០២០ WEBCASH";
+
+// ----------- Menu
+"recent_visited"="កម្មវិធីដែលបានទស្សនា";
+"home"="ទំព័រដើម";
+"settings"="ការកំណត់";
+
+// ----------- Home Menu
+"search_for_apps"="ស្វែងរកកម្មវិធី";
+"list_of_all_apps"="បញ្ជីកម្មវិធីទាំងអស់";
+"get"="ដំឡើង";
+"server_real"="បានអភិវឌ្ឍ សាធារណៈ";
+"server_develop"="អភិវឌ្ឍ ឯកជន";
+
+// ----------- Time formate
+"years_ago"="ឆ្នាំមុន";
+"months_ago"="ខែមុន";
+"days_ago"="ថ្ងៃមុន";
+"hours_ago"="ម៉ោងមុន";
+"minutes_ago"="នាទីមុន";
+"seconds_ago"="វិនាទីមុន";
+"year_ago"="ឆ្នាំមុន";
+"month_ago"="ខែមុន";
+"day_ago"="ថ្ងៃមុន";
+"hour_ago"="ម៉ោងមុន";
+"minute_ago"="នាទីមុន";
+"second_ago"="វិនាទីមុន";
+
+"moment_ago"="មួយភ្លែតមុននេះ";
+
+// ----------- Filter Popup
+"sort_the_list_by"="តម្រៀបបញ្ជីតាម :";
+"last_update"="ការធ្វើបច្ចុប្បន្នភាពចុងក្រោយ";
+"a_to_z"="A ដល់ Z";
+"z_to_a"="Z ដល់ A";
+"select_list_styles_by"="ជ្រើសរចនាប័ទ្មបញ្ជីដោយ :";
+"apply_filter"="អនុវត្តតម្រង";
+
+// ----------- Quick Detail
+"latest_version"="កំណែចុងក្រោយ:";
+"real"="បានអភិវឌ្ឍ";
+"develop"="អភិវឌ្ឍ";
+"list_of_all_app_version"="បង្ហាញជំនាន់ទាំងអស់របស់កម្មវិធី";
+"version"="ជំនាន់ :";
+
+// ----------- Settings
+"notification"="ដំណឹង";
+"notification_detail"="ទទួលបានដំណឹងសម្រាប់ព័ត៌មានកម្មវិធីថ្មី";
+"display_language"="បង្ហាញភាសា";
+"choose_language"="ជ្រើសរើសភាសាដែលអ្នកចូលចិត្ត";
+"about_us"="អំពី​ពួក​យើង";
+"about_us_detail"="បង្កើតដោយស្នាដៃកូនខ្មែរពិតៗ";
+
+"loading"="កំពុងដំណើរការ…";
