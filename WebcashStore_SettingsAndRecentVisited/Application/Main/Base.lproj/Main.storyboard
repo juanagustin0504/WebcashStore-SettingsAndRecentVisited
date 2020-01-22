@@ -300,7 +300,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <constraints>
                             <constraint firstItem="agr-1U-mUo" firstAttribute="bottom" secondItem="Dqj-bg-IHj" secondAttribute="bottom" id="2Zb-pX-5ek"/>
                             <constraint firstItem="Dqj-bg-IHj" firstAttribute="leading" secondItem="agr-1U-mUo" secondAttribute="leading" id="3Xe-of-AFn"/>
@@ -313,6 +313,13 @@
                         <viewLayoutGuide key="safeArea" id="agr-1U-mUo"/>
                     </view>
                     <connections>
+                        <outlet property="about_us" destination="Zvn-9C-FfZ" id="TpN-oU-JWs"/>
+                        <outlet property="about_us_detail" destination="Doa-nl-2VY" id="tU9-Wj-DGz"/>
+                        <outlet property="choose_language" destination="eaG-Xc-s90" id="5bR-dv-bGg"/>
+                        <outlet property="display_language" destination="jvB-36-doo" id="fgK-ZJ-P0p"/>
+                        <outlet property="notification" destination="kdE-8L-7dg" id="gNd-kI-bDf"/>
+                        <outlet property="notification_detail" destination="lI8-ot-2Gr" id="4UH-7t-4TH"/>
+                        <outlet property="settings" destination="UAP-ry-6MS" id="nnU-4X-JWe"/>
                         <outlet property="tableView" destination="Dqj-bg-IHj" id="J6I-qy-ew2"/>
                     </connections>
                 </viewController>

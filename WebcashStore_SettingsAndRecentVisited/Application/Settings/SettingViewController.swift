@@ -17,6 +17,15 @@ class SettingViewController: UIViewController {
     private let langImages: [UIImage] = [UIImage(named: "Flag_of_Korea_(1919_1945).png")!, UIImage(named: "255px-Flag_of_Cambodia.svg.png")!, UIImage(named: "UK-US_flag.png")!]
     private let btnLangImages: [UIImage] = [UIImage(named: "baseline-radio_button_unchecked-24px")!, UIImage(named: "baseline-radio_button_checked-24px")!]
     
+    @IBOutlet weak var settings: UILabel!
+    @IBOutlet weak var notification: UILabel!
+    @IBOutlet weak var notification_detail: UILabel!
+    @IBOutlet weak var display_language: UILabel!
+    @IBOutlet weak var choose_language: UILabel!
+    @IBOutlet weak var about_us: UILabel!
+    @IBOutlet weak var about_us_detail: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,8 +59,20 @@ class SettingViewController: UIViewController {
         
         print(selectedLanguage)
         LanguageManager.shared.setLanguage(language: selectedLanguage)
+        changeStringsFromLanguage()
+        
         self.tableView.reloadData()
 
+    }
+    
+    private func changeStringsFromLanguage() {
+        settings.text = "settings".localiz()
+        notification.text = "notification".localiz()
+        notification_detail.text = "notification_detail".localiz()
+        display_language.text = "display_language".localiz()
+        choose_language.text = "choose_language".localiz()
+        about_us.text = "about_us".localiz()
+        about_us_detail.text = "about_us_detail".localiz()
     }
 
 }
@@ -61,6 +82,19 @@ extension SettingViewController: UITableViewDelegate {
 }
 
 extension SettingViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: // Korean
+        LanguageManager.shared.setLanguage(language: .ko)
+        case 1: // Khmer
+        LanguageManager.shared.setLanguage(language: .km)
+        default:
+        LanguageManager.shared.setLanguage(language: .en)
+        }
+        changeStringsFromLanguage()
+        self.tableView.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return langList.count

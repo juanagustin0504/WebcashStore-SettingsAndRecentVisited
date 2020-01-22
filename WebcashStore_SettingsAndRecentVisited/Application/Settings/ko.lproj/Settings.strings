@@ -11,54 +11,54 @@
 "copyright © 2020 WEBCASH" = "copyright © 2020 WEBCASH";
 
 // ----------- Menu
-"recent_visited"="Recent visited";
-"home"="Home";
-"settings"="Settings";
+"recent_visited"="최근 방문";
+"home"="홈";
+"settings"="설정";
 
 // ----------- Home Menu
-"search_for_apps"="Search for apps";
-"list_of_all_apps"="List of all Apps";
-"get"="GET";
-"server_real"="Server Real";
-"server_develop"="Server Develop";
+"search_for_apps"="앱 검색";
+"list_of_all_apps"="모든 앱 목록";
+"get"="다운로드";
+"server_real"="서버 리얼";
+"server_develop"="서버 개발";
 
 // ----------- Time formate
-"years_ago"="years ago";
-"months_ago"="months ago";
-"days_ago"="days ago";
-"hours_ago"="hours ago";
-"minutes_ago"="minutes ago";
-"seconds_ago"="second ago";
-"year_ago"="year ago";
-"month_ago"="month ago";
-"day_ago"="day ago";
-"hour_ago"="hour ago";
-"minute_ago"="minute ago";
-"second_ago"="seconds ago";
+"years_ago"="년 전에";
+"months_ago"="달 전에";
+"days_ago"="일 전에";
+"hours_ago"="시간 전에";
+"minutes_ago"="분 전에";
+"seconds_ago"="초 전에";
+"year_ago"="일 년 전에";
+"month_ago"="한 달 전에";
+"day_ago"="하루 전에";
+"hour_ago"="한 시간 전에";
+"minute_ago"="일 분 전에";
+"second_ago"="일 초 전에";
 
-"moment_ago"="a moment ago";
+"moment_ago"="조금 전에";
 
 // ----------- Filter Popup
-"sort_the_list_by"="Sort the list by :";
-"last_update"="Last update";
-"a_to_z"="A to Z";
-"z_to_a"="Z to A";
-"select_list_styles_by"="Select list styles by :";
-"apply_filter"="Apply Filter";
+"sort_the_list_by"="목록 정렬 기준 :";
+"last_update"="마지막 업데이트";
+"a_to_z"="오름차순";
+"z_to_a"="내림차순";
+"select_list_styles_by"="목록 스타일 선택 기준 :";
+"apply_filter"="필터 적용";
 
 // ----------- Quick Detail
-"latest_version"="Lastest version :";
-"real"="Real";
-"develop"="Develop";
-"list_of_all_app_version"="List of all app’s version";
-"version"="version :";
+"latest_version"="마지막 버전 :";
+"real"="리얼";
+"develop"="개발";
+"list_of_all_app_version"="모든 앱의 버전 목록";
+"version"="버전 :";
 
 // ----------- Settings
-"notification"="Notification";
-"notification_detail"="Get notified for new app news";
-"display_language"="Display Language";
-"choose_language"="Choose your language";
+"notification"="알림";
+"notification_detail"="새로운 앱 뉴스에 대한 알림";
+"display_language"="언어 표시";
+"choose_language"="언어를 선택하십시오.";
 "about_us"="About Us";
-"about_us_detail"="Made by love from Phnom Penh, Cambodia.";
+"about_us_detail"="캄보디아 프놈펜의 사랑에 의해 만들어졌습니다.";
 
-"loading"="Loading…";
+"loading"="잠시만 기다려주세요…";

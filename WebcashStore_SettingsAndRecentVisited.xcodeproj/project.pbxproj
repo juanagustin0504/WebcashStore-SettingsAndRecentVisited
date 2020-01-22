@@ -17,7 +17,6 @@
 		766B399223D5A2E700F2DA5F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766B399123D5A2E700F2DA5F /* SettingsViewController.swift */; };
 		76CDE79223D6C5280025C9F3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CDE79123D6C5280025C9F3 /* SettingViewController.swift */; };
 		76CDE79B23D6EDB00025C9F3 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76CDE79D23D6EDB00025C9F3 /* Settings.strings */; };
-		76F038CA23D6828E00B63C06 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76F038CC23D6828E00B63C06 /* Localizable.strings */; };
 		CC1C661A742908C50F474989 /* Pods_WebcashStore_SettingsAndRecentVisited.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96BBB3876F3002DA77C1409 /* Pods_WebcashStore_SettingsAndRecentVisited.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,9 +36,6 @@
 		76CDE79C23D6EDB00025C9F3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
 		76CDE79E23D6EDB20025C9F3 /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Settings.strings; sourceTree = "<group>"; };
 		76CDE79F23D6EDB30025C9F3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Settings.strings; sourceTree = "<group>"; };
-		76F038CB23D6828E00B63C06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		76F038CD23D6829D00B63C06 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		76F038CE23D682B800B63C06 /* km */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = km; path = km.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D6B1E16B22D953DD14F583D1 /* Pods-WebcashStore_SettingsAndRecentVisited.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebcashStore_SettingsAndRecentVisited.debug.xcconfig"; path = "Target Support Files/Pods-WebcashStore_SettingsAndRecentVisited/Pods-WebcashStore_SettingsAndRecentVisited.debug.xcconfig"; sourceTree = "<group>"; };
 		E96BBB3876F3002DA77C1409 /* Pods_WebcashStore_SettingsAndRecentVisited.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebcashStore_SettingsAndRecentVisited.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -118,7 +114,6 @@
 			children = (
 				766B399123D5A2E700F2DA5F /* SettingsViewController.swift */,
 				76CDE79D23D6EDB00025C9F3 /* Settings.strings */,
-				76F038CC23D6828E00B63C06 /* Localizable.strings */,
 				76CDE79123D6C5280025C9F3 /* SettingViewController.swift */,
 				763F2A3723D7D9BA005C8C5E /* LanguageSelectionCell.swift */,
 			);
@@ -229,7 +224,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				766B398323D5A16000F2DA5F /* LaunchScreen.storyboard in Resources */,
-				76F038CA23D6828E00B63C06 /* Localizable.strings in Resources */,
 				766B398023D5A16000F2DA5F /* Assets.xcassets in Resources */,
 				766B397E23D5A16000F2DA5F /* Main.storyboard in Resources */,
 				76CDE79B23D6EDB00025C9F3 /* Settings.strings in Resources */,
@@ -321,16 +315,6 @@
 				76CDE79F23D6EDB30025C9F3 /* ko */,
 			);
 			name = Settings.strings;
-			sourceTree = "<group>";
-		};
-		76F038CC23D6828E00B63C06 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				76F038CB23D6828E00B63C06 /* en */,
-				76F038CD23D6829D00B63C06 /* ko */,
-				76F038CE23D682B800B63C06 /* km */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
