@@ -300,12 +300,12 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="agr-1U-mUo" firstAttribute="bottom" secondItem="Dqj-bg-IHj" secondAttribute="bottom" id="2Zb-pX-5ek"/>
                             <constraint firstItem="Dqj-bg-IHj" firstAttribute="leading" secondItem="agr-1U-mUo" secondAttribute="leading" id="3Xe-of-AFn"/>
                             <constraint firstItem="agr-1U-mUo" firstAttribute="trailing" secondItem="Dqj-bg-IHj" secondAttribute="trailing" id="DnM-Wh-SJb"/>
-                            <constraint firstItem="Dqj-bg-IHj" firstAttribute="top" secondItem="MHh-fI-zqQ" secondAttribute="bottom" constant="8" symbolic="YES" id="GKJ-yX-svA"/>
+                            <constraint firstItem="Dqj-bg-IHj" firstAttribute="top" secondItem="MHh-fI-zqQ" secondAttribute="bottom" constant="8" id="GKJ-yX-svA"/>
                             <constraint firstItem="agr-1U-mUo" firstAttribute="trailing" secondItem="MHh-fI-zqQ" secondAttribute="trailing" id="XAt-yT-T0W"/>
                             <constraint firstItem="MHh-fI-zqQ" firstAttribute="leading" secondItem="CLM-wR-EWf" secondAttribute="leading" id="biN-TO-Llt"/>
                             <constraint firstItem="MHh-fI-zqQ" firstAttribute="top" secondItem="agr-1U-mUo" secondAttribute="top" id="exy-6T-TqT"/>
@@ -319,7 +319,7 @@
                         <outlet property="display_language" destination="jvB-36-doo" id="fgK-ZJ-P0p"/>
                         <outlet property="notification" destination="kdE-8L-7dg" id="gNd-kI-bDf"/>
                         <outlet property="notification_detail" destination="lI8-ot-2Gr" id="4UH-7t-4TH"/>
-                        <outlet property="settings" destination="UAP-ry-6MS" id="nnU-4X-JWe"/>
+                        <outlet property="settingsTitle" destination="UAP-ry-6MS" id="HqC-Be-BfE"/>
                         <outlet property="tableView" destination="Dqj-bg-IHj" id="J6I-qy-ew2"/>
                     </connections>
                 </viewController>

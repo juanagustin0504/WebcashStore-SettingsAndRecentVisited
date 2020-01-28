@@ -17,7 +17,8 @@ class SettingViewController: UIViewController {
     private let langImages: [UIImage] = [UIImage(named: "Flag_of_Korea_(1919_1945).png")!, UIImage(named: "255px-Flag_of_Cambodia.svg.png")!, UIImage(named: "UK-US_flag.png")!]
     private let btnLangImages: [UIImage] = [UIImage(named: "baseline-radio_button_unchecked-24px")!, UIImage(named: "baseline-radio_button_checked-24px")!]
     
-    @IBOutlet weak var settings: UILabel!
+    
+    @IBOutlet weak var settingsTitle: UILabel!
     @IBOutlet weak var notification: UILabel!
     @IBOutlet weak var notification_detail: UILabel!
     @IBOutlet weak var display_language: UILabel!
@@ -33,16 +34,22 @@ class SettingViewController: UIViewController {
         let maskLayer = CAShapeLayer()
         maskLayer.frame = tableView.bounds
         maskLayer.path = maskPath.cgPath
+        maskLayer.applySketchShadow(color: .blue, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
 
 //        let shadowLayer = CAShapeLayer()
 //        shadowLayer.frame = tableView.bounds
-//        shadowLayer.path = maskPath.cgPath
 //        shadowLayer.applySketchShadow(color: .black, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
+//        shadowLayer.path = maskPath.cgPath
+        
+//        maskLayer.masksToBounds = false
+//        shadowLayer.masksToBounds = false
+//        tableView.layer.masksToBounds = false
         
 //        tableView.layer.applySketchShadow(color: .black, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
         
         tableView.layer.mask = maskLayer
 //        tableView.layer.mask = shadowLayer
+        
     }
     
 
@@ -58,6 +65,7 @@ class SettingViewController: UIViewController {
         }
         
         print(selectedLanguage)
+//        LanguageManager.shared.currentLanguage = selectedLanguage
         LanguageManager.shared.setLanguage(language: selectedLanguage)
         changeStringsFromLanguage()
         
@@ -65,8 +73,8 @@ class SettingViewController: UIViewController {
 
     }
     
-    private func changeStringsFromLanguage() {
-        settings.text = "settings".localiz()
+    func changeStringsFromLanguage() {
+        settingsTitle.text = "settings".localiz()
         notification.text = "notification".localiz()
         notification_detail.text = "notification_detail".localiz()
         display_language.text = "display_language".localiz()
@@ -92,6 +100,8 @@ extension SettingViewController: UITableViewDataSource {
         default:
         LanguageManager.shared.setLanguage(language: .en)
         }
+        
+        print(LanguageManager.shared.currentLanguage)
         changeStringsFromLanguage()
         self.tableView.reloadData()
     }
