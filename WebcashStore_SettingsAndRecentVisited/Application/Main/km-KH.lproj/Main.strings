@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "Made by love from KOSIGN. Phnom Penh."; ObjectID = "Doa-nl-2VY"; */
+"Doa-nl-2VY.text" = "Made by love from KOSIGN. Phnom Penh.";
+
+/* Class = "UIButton"; normalTitle = "English"; ObjectID = "F2f-n8-TEj"; */
+"F2f-n8-TEj.normalTitle" = "English";
+
+/* Class = "UILabel"; text = "Hello"; ObjectID = "Iji-zU-ktj"; */
+"Iji-zU-ktj.text" = "Hello";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "Pkx-eZ-l8v"; */
+"Pkx-eZ-l8v.text" = "Settings";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "UAP-ry-6MS"; */
+"UAP-ry-6MS.text" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "Yzl-LZ-Koq"; */
+"Yzl-LZ-Koq.normalTitle" = "Settings";
+
+/* Class = "UILabel"; text = "About Us"; ObjectID = "Zvn-9C-FfZ"; */
+"Zvn-9C-FfZ.text" = "About Us";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "bvo-F2-AHT"; */
+"bvo-F2-AHT.text" = "Language";
+
+/* Class = "UILabel"; text = "Choose your language"; ObjectID = "eaG-Xc-s90"; */
+"eaG-Xc-s90.text" = "Choose your language";
+
+/* Class = "UILabel"; text = "Display Language"; ObjectID = "jvB-36-doo"; */
+"jvB-36-doo.text" = "Display Language";
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "kdE-8L-7dg"; */
+"kdE-8L-7dg.text" = "Notification";
+
+/* Class = "UILabel"; text = "Get notified for new app news"; ObjectID = "lI8-ot-2Gr"; */
+"lI8-ot-2Gr.text" = "Get notified for new app news";
+
+/* Class = "UIButton"; normalTitle = "Khmer"; ObjectID = "sx5-6D-m2f"; */
+"sx5-6D-m2f.normalTitle" = "Khmer";
+
+/* Class = "UIButton"; normalTitle = "Korean"; ObjectID = "xCQ-Ig-b8b"; */
+"xCQ-Ig-b8b.normalTitle" = "Korean";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bMH-Ov-aaz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -124,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="138" y="-536"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--View Controller-->
         <scene sceneID="OGn-n5-rLW">
             <objects>
-                <viewController storyboardIdentifier="SettingViewController_sid" id="bMH-Ov-aaz" customClass="SettingViewController" customModule="WebcashStore_SettingsAndRecentVisited" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bMH-Ov-aaz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CLM-wR-EWf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

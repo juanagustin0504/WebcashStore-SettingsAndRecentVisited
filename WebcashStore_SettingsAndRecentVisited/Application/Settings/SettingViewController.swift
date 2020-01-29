@@ -10,7 +10,7 @@ import UIKit
 import LanguageManager_iOS
 
 class SettingViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     private let langList: [String] = ["한국어", "ខ្មែរ", "English"]
@@ -29,30 +29,32 @@ class SettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let maskPath = UIBezierPath(roundedRect: tableView.bounds, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 30.0, height: 30.0))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = tableView.bounds
         maskLayer.path = maskPath.cgPath
         maskLayer.applySketchShadow(color: .blue, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
-
-//        let shadowLayer = CAShapeLayer()
-//        shadowLayer.frame = tableView.bounds
-//        shadowLayer.applySketchShadow(color: .black, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
-//        shadowLayer.path = maskPath.cgPath
         
-//        maskLayer.masksToBounds = false
-//        shadowLayer.masksToBounds = false
-//        tableView.layer.masksToBounds = false
+        //        let shadowLayer = CAShapeLayer()
+        //        shadowLayer.frame = tableView.bounds
+        //        shadowLayer.applySketchShadow(color: .black, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
+        //        shadowLayer.path = maskPath.cgPath
         
-//        tableView.layer.applySketchShadow(color: .black, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
+        //        maskLayer.masksToBounds = false
+        //        shadowLayer.masksToBounds = false
+        //        tableView.layer.masksToBounds = false
+        
+        //        tableView.layer.applySketchShadow(color: .black, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
         
         tableView.layer.mask = maskLayer
-//        tableView.layer.mask = shadowLayer
+        //        tableView.layer.mask = shadowLayer
+        
+        changeStringsFromLanguage()
         
     }
     
-
+    
     @IBAction func changeLanguage(_ sender: UIButton) {
         let selectedLanguage: Languages
         switch sender.tag {
@@ -65,12 +67,11 @@ class SettingViewController: UIViewController {
         }
         
         print(selectedLanguage)
-//        LanguageManager.shared.currentLanguage = selectedLanguage
+        //        LanguageManager.shared.currentLanguage = selectedLanguage
         LanguageManager.shared.setLanguage(language: selectedLanguage)
         changeStringsFromLanguage()
         
         self.tableView.reloadData()
-
     }
     
     func changeStringsFromLanguage() {
@@ -82,29 +83,42 @@ class SettingViewController: UIViewController {
         about_us.text = "about_us".localiz()
         about_us_detail.text = "about_us_detail".localiz()
     }
-
+    
 }
 
 extension SettingViewController: UITableViewDelegate {
-    
-}
-
-extension SettingViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0: // Korean
-        LanguageManager.shared.setLanguage(language: .ko)
+            LanguageManager.shared.setLanguage(language: .ko)
         case 1: // Khmer
-        LanguageManager.shared.setLanguage(language: .km)
+            LanguageManager.shared.setLanguage(language: .km)
         default:
-        LanguageManager.shared.setLanguage(language: .en)
+            LanguageManager.shared.setLanguage(language: .en)
         }
         
         print(LanguageManager.shared.currentLanguage)
         changeStringsFromLanguage()
         self.tableView.reloadData()
     }
+}
+
+extension SettingViewController: UITableViewDataSource {
+    
+    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        switch indexPath.row {
+    //        case 0: // Korean
+    //        LanguageManager.shared.setLanguage(language: .ko)
+    //        case 1: // Khmer
+    //        LanguageManager.shared.setLanguage(language: .km)
+    //        default:
+    //        LanguageManager.shared.setLanguage(language: .en)
+    //        }
+    //
+    //        print(LanguageManager.shared.currentLanguage)
+    //        changeStringsFromLanguage()
+    //        self.tableView.reloadData()
+    //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return langList.count
@@ -129,4 +143,27 @@ extension SettingViewController: UITableViewDataSource {
     }
     
     
+}
+
+extension CALayer {
+    func applySketchShadow(
+        color: UIColor = .black,
+        alpha: Float = 0.5,
+        x: CGFloat = 0,
+        y: CGFloat =  -10,
+        blur: CGFloat = 4,
+        spread: CGFloat = 0)
+    {
+        shadowColor = color.cgColor
+        shadowOpacity = alpha
+        shadowOffset = CGSize(width: x, height: y)
+        shadowRadius = blur / 2.0
+        if spread == 0 {
+            shadowPath = nil
+        } else {
+            let dx = -spread
+            let rect = bounds.insetBy(dx: dx, dy: dx)
+            shadowPath = UIBezierPath(rect: rect).cgPath
+        }
+    }
 }

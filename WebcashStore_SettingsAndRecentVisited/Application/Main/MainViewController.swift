@@ -17,7 +17,8 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func gotoSettings(_ sender: UIButton) {
-        let settingsVc = self.storyboard?.instantiateViewController(withIdentifier: "SettingsViewController_sid") as! SettingsViewController
+        let settingsSb = UIStoryboard(name: "Settings", bundle: nil)
+        let settingsVc = settingsSb.instantiateViewController(withIdentifier: "SettingViewController_sid") as! SettingViewController
         settingsVc.modalPresentationStyle = .fullScreen
         settingsVc.modalTransitionStyle = .crossDissolve
         self.present(settingsVc, animated: true)
