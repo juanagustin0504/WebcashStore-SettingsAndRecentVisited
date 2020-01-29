@@ -24,6 +24,15 @@ class MainViewController: UIViewController {
         self.present(settingsVc, animated: true)
     }
     
+    @IBAction func gotoRecentVisited(_ sender: UIButton) {
+        let rctVisitedSb = UIStoryboard(name: "RecentVisited", bundle: nil)
+        let rctVisitedVc = rctVisitedSb.instantiateViewController(withIdentifier: "RecentVisitedViewController_sid") as! RecentVisitedViewController
+        rctVisitedVc.modalPresentationStyle = .fullScreen
+        rctVisitedVc.modalTransitionStyle = .crossDissolve
+        self.present(rctVisitedVc, animated: true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

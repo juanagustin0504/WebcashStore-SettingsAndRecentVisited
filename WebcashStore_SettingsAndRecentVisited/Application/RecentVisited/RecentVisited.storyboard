@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recent Visited View Controller-->
+        <scene sceneID="X20-ZP-a0c">
+            <objects>
+                <viewController storyboardIdentifier="RecentVisitedViewController_sid" id="C47-PK-qjH" customClass="RecentVisitedViewController" customModule="WebcashStore_SettingsAndRecentVisited" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jeP-pR-wXc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byR-Ab-pqH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Visited" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFE-Y4-x2b">
+                                        <rect key="frame" x="138.5" y="18" width="137.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="BPz-16-zx8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.64313725489999995" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VC-cc-tQ4">
+                                        <rect key="frame" x="20" y="16" width="17" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="17" id="4mK-05-n8s"/>
+                                            <constraint firstAttribute="height" constant="24" id="mdj-ik-Khj"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="backToMain:" destination="C47-PK-qjH" eventType="touchUpInside" id="EnZ-FD-Ah9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="5nU-SZ-h3Q"/>
+                                    <constraint firstItem="VFE-Y4-x2b" firstAttribute="centerX" secondItem="byR-Ab-pqH" secondAttribute="centerX" id="Gdw-aB-V10"/>
+                                    <constraint firstAttribute="bottom" secondItem="2VC-cc-tQ4" secondAttribute="bottom" constant="16" id="JLq-2p-vis"/>
+                                    <constraint firstItem="2VC-cc-tQ4" firstAttribute="leading" secondItem="byR-Ab-pqH" secondAttribute="leading" constant="20" symbolic="YES" id="Ocw-oh-DGV"/>
+                                    <constraint firstAttribute="bottom" secondItem="VFE-Y4-x2b" secondAttribute="bottom" constant="17" id="Vag-Yh-WXD"/>
+                                    <constraint firstItem="2VC-cc-tQ4" firstAttribute="top" secondItem="byR-Ab-pqH" secondAttribute="top" constant="16" id="kQh-sU-Jdc"/>
+                                    <constraint firstItem="VFE-Y4-x2b" firstAttribute="top" secondItem="byR-Ab-pqH" secondAttribute="top" constant="18" id="p9k-o7-hM8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="byR-Ab-pqH" firstAttribute="leading" secondItem="qpY-bp-qM6" secondAttribute="leading" id="Wq5-72-scu"/>
+                            <constraint firstItem="byR-Ab-pqH" firstAttribute="top" secondItem="qpY-bp-qM6" secondAttribute="top" id="Z5H-ov-cdM"/>
+                            <constraint firstItem="qpY-bp-qM6" firstAttribute="trailing" secondItem="byR-Ab-pqH" secondAttribute="trailing" id="kSv-Kq-gaJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qpY-bp-qM6"/>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="2VC-cc-tQ4" id="wRa-wW-qU7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sy-KK-UKy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+    </scenes>
+</document>

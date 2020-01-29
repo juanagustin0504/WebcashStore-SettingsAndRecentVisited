@@ -17,19 +17,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzl-LZ-Koq">
-                                <rect key="frame" x="0.0" y="412" width="414" height="72"/>
+                                <rect key="frame" x="0.0" y="334" width="414" height="72"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
                                     <action selector="gotoSettings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o22-tR-qiM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rza-Vn-qWf">
+                                <rect key="frame" x="0.0" y="458" width="414" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Recent Visited"/>
+                                <connections>
+                                    <action selector="gotoRecentVisited:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZNX-Ss-dau"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Yzl-LZ-Koq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8Yx-OG-eAm"/>
+                            <constraint firstItem="Yzl-LZ-Koq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-78" id="8Yx-OG-eAm"/>
                             <constraint firstItem="Yzl-LZ-Koq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ABF-91-W0b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yzl-LZ-Koq" secondAttribute="trailing" id="FcW-e4-UO6"/>
+                            <constraint firstItem="rza-Vn-qWf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gjn-Xj-tcu"/>
+                            <constraint firstItem="rza-Vn-qWf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hu4-DM-pnV"/>
+                            <constraint firstItem="rza-Vn-qWf" firstAttribute="top" secondItem="Yzl-LZ-Koq" secondAttribute="bottom" constant="52" id="NEE-4J-0sG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

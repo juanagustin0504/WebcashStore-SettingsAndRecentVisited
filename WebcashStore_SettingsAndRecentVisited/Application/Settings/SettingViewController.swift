@@ -17,7 +17,7 @@ class SettingViewController: UIViewController {
     private let langImages: [UIImage] = [UIImage(named: "Flag_of_Korea_(1919_1945).png")!, UIImage(named: "255px-Flag_of_Cambodia.svg.png")!, UIImage(named: "UK-US_flag.png")!]
     private let btnLangImages: [UIImage] = [UIImage(named: "baseline-radio_button_unchecked-24px")!, UIImage(named: "baseline-radio_button_checked-24px")!]
     
-    
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var settingsTitle: UILabel!
     @IBOutlet weak var notification: UILabel!
     @IBOutlet weak var notification_detail: UILabel!
@@ -30,6 +30,9 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let image = UIImage(named: "ic_expand_less_24px.png")!
+        let newImage = image.rotate(radians: .pi/2) // Rotate 90 degrees
+        backButton.setImage(newImage, for: .normal)
         let maskPath = UIBezierPath(roundedRect: tableView.bounds, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 30.0, height: 30.0))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = tableView.bounds
@@ -84,6 +87,29 @@ class SettingViewController: UIViewController {
         about_us_detail.text = "about_us_detail".localiz()
     }
     
+    @IBAction func backToMain(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+}
+
+extension UIView {
+    @discardableResult
+    func corners(_ radius: CGFloat) -> UIView {
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+        return self
+    }
+    
+    @discardableResult
+    func shadow(radius: CGFloat, color: UIColor, offset: CGSize, opacity: Float) -> UIView {
+        self.layer.shadowRadius = radius
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOffset = offset
+        self.layer.shadowOpacity = opacity
+        return self
+    }
 }
 
 extension SettingViewController: UITableViewDelegate {
@@ -165,5 +191,29 @@ extension CALayer {
             let rect = bounds.insetBy(dx: dx, dy: dx)
             shadowPath = UIBezierPath(rect: rect).cgPath
         }
+    }
+}
+
+extension UIImage {
+    func rotate(radians: Float) -> UIImage? {
+        var newSize = CGRect(origin: CGPoint.zero, size: self.size).applying(CGAffineTransform(rotationAngle: CGFloat(radians))).size
+        // Trim off the extremely small float value to prevent core graphics from rounding it up
+        newSize.width = floor(newSize.width)
+        newSize.height = floor(newSize.height)
+
+        UIGraphicsBeginImageContextWithOptions(newSize, false, self.scale)
+        let context = UIGraphicsGetCurrentContext()!
+
+        // Move origin to middle
+        context.translateBy(x: newSize.width/2, y: newSize.height/2)
+        // Rotate around middle
+        context.rotate(by: CGFloat(radians))
+        // Draw the image at its center
+        self.draw(in: CGRect(x: -self.size.width/2, y: -self.size.height/2, width: self.size.width, height: self.size.height))
+
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage
     }
 }
