@@ -28,6 +28,8 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var about_us: UILabel!
     @IBOutlet weak var about_us_detail: UILabel!
     
+    @IBOutlet weak var notificationView: UIView!
+    @IBOutlet weak var notificationSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,27 +59,41 @@ class SettingViewController: UIViewController {
         
         changeStringsFromLanguage()
         
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.gotoNotificationSetting (_:)))
+        self.notificationView.addGestureRecognizer(gesture)
+        
     }
     
-    @IBAction func switchNotification(_ sender: UISwitch) {
+    override func viewWillAppear(_ animated: Bool) {
         
-        if sender.isOn {
-            DispatchQueue.main.async {
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { (didAllow, error) in
-                    
-                })
-                UNUserNotificationCenter.current().delegate = self
-            }
-            
-            
+        if UIApplication.shared.isRegisteredForRemoteNotifications {
+            notificationSwitch.isOn = true
         } else {
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-            
+            notificationSwitch.isOn = false
         }
-        
-        
     }
     
+    @objc func gotoNotificationSetting(_ sender: UITapGestureRecognizer) {
+//        let bgTask = UIBackgroundTaskIdentifier.invalid
+//        UIApplication.shared.endBackgroundTask(bgTask)
+        
+        DispatchQueue.main.async {
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                return
+            }
+
+            if UIApplication.shared.canOpenURL(settingsUrl) {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        print("Settings opened: \(success)") // Prints true
+                    })
+                } else {
+                    UIApplication.shared.openURL(settingsUrl as URL)
+                }
+                
+            }
+        }
+    }
     
     @IBAction func changeLanguage(_ sender: UIButton) {
         let selectedLanguage: Languages

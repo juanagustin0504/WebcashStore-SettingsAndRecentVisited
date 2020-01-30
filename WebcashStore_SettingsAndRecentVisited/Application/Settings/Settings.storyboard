@@ -76,9 +76,6 @@
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eNu-Ai-Yy5">
                                             <rect key="frame" x="345" y="20" width="51" height="31"/>
                                             <color key="onTintColor" red="0.0" green="0.27058823529999998" blue="0.64313725489999995" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="switchNotification:" destination="qbY-qe-9UK" eventType="valueChanged" id="0rZ-rd-Waz"/>
-                                            </connections>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idU-5e-hyU">
                                             <rect key="frame" x="20" y="113" width="134" height="22"/>
@@ -98,6 +95,11 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="cG3-JJ-7I4"/>
                                             </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ha-y8-rep">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -229,6 +231,8 @@
                         <outlet property="choose_language" destination="xTs-vZ-gRi" id="Gxo-kh-NaD"/>
                         <outlet property="display_language" destination="idU-5e-hyU" id="mHL-yT-TJF"/>
                         <outlet property="notification" destination="dOx-PT-WKZ" id="Eiv-L5-KLa"/>
+                        <outlet property="notificationSwitch" destination="eNu-Ai-Yy5" id="moJ-h4-xCK"/>
+                        <outlet property="notificationView" destination="4Ha-y8-rep" id="qO1-Rb-D13"/>
                         <outlet property="notification_detail" destination="W67-Fu-i9a" id="nNI-aF-uSJ"/>
                         <outlet property="parentView" destination="4PD-3K-oI6" id="2qH-Ea-Gza"/>
                         <outlet property="settingsTitle" destination="PHG-5P-lpH" id="8YO-2l-Ok6"/>
@@ -237,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jft-Tn-yha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-13" y="145"/>
+            <point key="canvasLocation" x="-13.043478260869566" y="144.64285714285714"/>
         </scene>
     </scenes>
     <resources>
