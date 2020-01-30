@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import UserNotifications
 import LanguageManager_iOS
 
 class SettingViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var parentView: UIView!
     
     private let langList: [String] = ["한국어", "ខ្មែរ", "English"]
     private let langImages: [UIImage] = [UIImage(named: "Flag_of_Korea_(1919_1945).png")!, UIImage(named: "255px-Flag_of_Cambodia.svg.png")!, UIImage(named: "UK-US_flag.png")!]
@@ -35,9 +37,9 @@ class SettingViewController: UIViewController {
         backButton.setImage(newImage, for: .normal)
         let maskPath = UIBezierPath(roundedRect: tableView.bounds, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 30.0, height: 30.0))
         let maskLayer = CAShapeLayer()
-        maskLayer.frame = tableView.bounds
+        maskLayer.frame = CGRect(x: self.tableView.bounds.minX, y: self.tableView.bounds.minY, width: self.tableView.bounds.width, height: self.tableView.bounds.height - 8)
         maskLayer.path = maskPath.cgPath
-        maskLayer.applySketchShadow(color: .blue, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
+//        maskLayer.applySketchShadow(color: .black, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
         
         //        let shadowLayer = CAShapeLayer()
         //        shadowLayer.frame = tableView.bounds
@@ -49,11 +51,30 @@ class SettingViewController: UIViewController {
         //        tableView.layer.masksToBounds = false
         
         //        tableView.layer.applySketchShadow(color: .black, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
-        
+        parentView.layer.mask = maskLayer
         tableView.layer.mask = maskLayer
         //        tableView.layer.mask = shadowLayer
         
         changeStringsFromLanguage()
+        
+    }
+    
+    @IBAction func switchNotification(_ sender: UISwitch) {
+        
+        if sender.isOn {
+            DispatchQueue.main.async {
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert], completionHandler: { (didAllow, error) in
+                    
+                })
+                UNUserNotificationCenter.current().delegate = self
+            }
+            
+            
+        } else {
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            
+        }
+        
         
     }
     
@@ -112,7 +133,7 @@ extension UIView {
     }
 }
 
-extension SettingViewController: UITableViewDelegate {
+extension SettingViewController: UITableViewDelegate, UNUserNotificationCenterDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0: // Korean
