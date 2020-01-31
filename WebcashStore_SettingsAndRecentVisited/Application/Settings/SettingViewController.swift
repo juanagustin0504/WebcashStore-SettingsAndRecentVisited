@@ -14,10 +14,9 @@ class SettingViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var parentView: UIView!
+    @IBOutlet weak var notificationView: UIView!
     
-    private let langList: [String] = ["한국어", "ខ្មែរ", "English"]
-    private let langImages: [UIImage] = [UIImage(named: "Flag_of_Korea_(1919_1945).png")!, UIImage(named: "255px-Flag_of_Cambodia.svg.png")!, UIImage(named: "UK-US_flag.png")!]
-    private let btnLangImages: [UIImage] = [UIImage(named: "baseline-radio_button_unchecked-24px")!, UIImage(named: "baseline-radio_button_checked-24px")!]
+    @IBOutlet weak var notificationSwitch: UISwitch!
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var settingsTitle: UILabel!
@@ -28,8 +27,11 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var about_us: UILabel!
     @IBOutlet weak var about_us_detail: UILabel!
     
-    @IBOutlet weak var notificationView: UIView!
-    @IBOutlet weak var notificationSwitch: UISwitch!
+    let bgTask = UIBackgroundTaskIdentifier.invalid
+    
+    private let langList: [String] = ["한국어", "ខ្មែរ", "English"]
+    private let langImages: [UIImage] = [UIImage(named: "Flag_of_Korea_(1919_1945).png")!, UIImage(named: "255px-Flag_of_Cambodia.svg.png")!, UIImage(named: "UK-US_flag.png")!]
+    private let btnLangImages: [UIImage] = [UIImage(named: "baseline-radio_button_unchecked-24px")!, UIImage(named: "baseline-radio_button_checked-24px")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,26 +39,8 @@ class SettingViewController: UIViewController {
         let image = UIImage(named: "ic_expand_less_24px.png")!
         let newImage = image.rotate(radians: .pi/2) // Rotate 90 degrees
         backButton.setImage(newImage, for: .normal)
-        let maskPath = UIBezierPath(roundedRect: tableView.bounds, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 30.0, height: 30.0))
-        let maskLayer = CAShapeLayer()
-        maskLayer.frame = CGRect(x: self.tableView.bounds.minX, y: self.tableView.bounds.minY, width: self.tableView.bounds.width, height: self.tableView.bounds.height - 8)
-        maskLayer.path = maskPath.cgPath
-//        maskLayer.applySketchShadow(color: .black, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
         
-        //        let shadowLayer = CAShapeLayer()
-        //        shadowLayer.frame = tableView.bounds
-        //        shadowLayer.applySketchShadow(color: .black, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
-        //        shadowLayer.path = maskPath.cgPath
-        
-        //        maskLayer.masksToBounds = false
-        //        shadowLayer.masksToBounds = false
-        //        tableView.layer.masksToBounds = false
-        
-        //        tableView.layer.applySketchShadow(color: .black, alpha: 0.4, x: 0, y: -10, blur: 5, spread: 0)
-        parentView.layer.mask = maskLayer
-        tableView.layer.mask = maskLayer
-        //        tableView.layer.mask = shadowLayer
-        
+        applyRoundedShadow()
         changeStringsFromLanguage()
         
         let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.gotoNotificationSetting (_:)))
@@ -64,18 +48,42 @@ class SettingViewController: UIViewController {
         
     }
     
+    func applyRoundedShadow() {
+        
+        let maskPath = UIBezierPath(roundedRect: tableView.bounds, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 30.0, height: 30.0))
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.tableView.bounds
+        maskLayer.path = maskPath.cgPath
+        
+        let shadowLayer = CAShapeLayer()
+        
+        shadowLayer.path = maskPath.cgPath
+        shadowLayer.fillColor = UIColor.clear.cgColor
+        
+        shadowLayer.shadowColor = UIColor.black.cgColor
+        shadowLayer.shadowPath = shadowLayer.path
+        shadowLayer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        shadowLayer.shadowOpacity = 0.4
+        shadowLayer.shadowRadius = 3
+        
+        
+        tableView.layer.mask = maskLayer
+        parentView.layer.insertSublayer(shadowLayer, at: 0)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         
-        if UIApplication.shared.isRegisteredForRemoteNotifications {
-            notificationSwitch.isOn = true
-        } else {
-            notificationSwitch.isOn = false
+        DispatchQueue.main.async {
+            if UIApplication.shared.isRegisteredForRemoteNotifications {
+                self.notificationSwitch.isOn = true
+            } else {
+                self.notificationSwitch.isOn = false
+            }
         }
+        
     }
     
     @objc func gotoNotificationSetting(_ sender: UITapGestureRecognizer) {
-//        let bgTask = UIBackgroundTaskIdentifier.invalid
-//        UIApplication.shared.endBackgroundTask(bgTask)
         
         DispatchQueue.main.async {
             guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
@@ -90,7 +98,6 @@ class SettingViewController: UIViewController {
                 } else {
                     UIApplication.shared.openURL(settingsUrl as URL)
                 }
-                
             }
         }
     }
@@ -127,8 +134,6 @@ class SettingViewController: UIViewController {
     @IBAction func backToMain(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 
 extension UIView {
@@ -167,21 +172,6 @@ extension SettingViewController: UITableViewDelegate, UNUserNotificationCenterDe
 }
 
 extension SettingViewController: UITableViewDataSource {
-    
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        switch indexPath.row {
-    //        case 0: // Korean
-    //        LanguageManager.shared.setLanguage(language: .ko)
-    //        case 1: // Khmer
-    //        LanguageManager.shared.setLanguage(language: .km)
-    //        default:
-    //        LanguageManager.shared.setLanguage(language: .en)
-    //        }
-    //
-    //        print(LanguageManager.shared.currentLanguage)
-    //        changeStringsFromLanguage()
-    //        self.tableView.reloadData()
-    //    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return langList.count
@@ -234,7 +224,7 @@ extension CALayer {
 extension UIImage {
     func rotate(radians: Float) -> UIImage? {
         var newSize = CGRect(origin: CGPoint.zero, size: self.size).applying(CGAffineTransform(rotationAngle: CGFloat(radians))).size
-        // Trim off the extremely small float value to prevent core graphics from rounding it up
+        
         newSize.width = floor(newSize.width)
         newSize.height = floor(newSize.height)
 
