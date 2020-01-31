@@ -10,10 +10,11 @@ import UIKit
 import UserNotifications
 import LanguageManager_iOS
 
-class SettingViewController: UIViewController {
+class SettingsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var notificationView: UIView!
     @IBOutlet weak var touchAreaView: UIView!
     
     @IBOutlet weak var notificationSwitch: UISwitch!
@@ -50,25 +51,25 @@ class SettingViewController: UIViewController {
     
     func applyRoundedShadow() {
         
-        let maskPath = UIBezierPath(roundedRect: tableView.bounds, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 30.0, height: 30.0))
+        let maskPath = UIBezierPath(roundedRect: notificationView.bounds, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight], cornerRadii: CGSize(width: 30.0, height: 30.0))
         let maskLayer = CAShapeLayer()
-        maskLayer.frame = self.tableView.bounds
+        maskLayer.frame = self.notificationView.bounds
         maskLayer.path = maskPath.cgPath
+        maskLayer.backgroundColor = UIColor.clear.cgColor
         
         let shadowLayer = CAShapeLayer()
         
         shadowLayer.path = maskPath.cgPath
         shadowLayer.fillColor = UIColor.clear.cgColor
         
-        shadowLayer.shadowColor = UIColor.black.cgColor
+        shadowLayer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4).cgColor
         shadowLayer.shadowPath = shadowLayer.path
-        shadowLayer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-        shadowLayer.shadowOpacity = 0.4
+        shadowLayer.shadowOffset = CGSize(width: 0.0, height: -5.0)
+        shadowLayer.shadowOpacity = 0.16
         shadowLayer.shadowRadius = 3
         
-        
-        tableView.layer.mask = maskLayer
         shadowView.layer.insertSublayer(shadowLayer, at: 0)
+        notificationView.layer.mask = maskLayer
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -136,25 +137,7 @@ class SettingViewController: UIViewController {
     }
 }
 
-extension UIView {
-    @discardableResult
-    func corners(_ radius: CGFloat) -> UIView {
-        self.layer.cornerRadius = radius
-        self.layer.masksToBounds = true
-        return self
-    }
-    
-    @discardableResult
-    func shadow(radius: CGFloat, color: UIColor, offset: CGSize, opacity: Float) -> UIView {
-        self.layer.shadowRadius = radius
-        self.layer.shadowColor = color.cgColor
-        self.layer.shadowOffset = offset
-        self.layer.shadowOpacity = opacity
-        return self
-    }
-}
-
-extension SettingViewController: UITableViewDelegate, UNUserNotificationCenterDelegate {
+extension SettingsViewController: UITableViewDelegate, UNUserNotificationCenterDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0: // Korean
@@ -171,7 +154,7 @@ extension SettingViewController: UITableViewDelegate, UNUserNotificationCenterDe
     }
 }
 
-extension SettingViewController: UITableViewDataSource {
+extension SettingsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return langList.count
@@ -196,51 +179,4 @@ extension SettingViewController: UITableViewDataSource {
     }
     
     
-}
-
-extension CALayer {
-    func applySketchShadow(
-        color: UIColor = .black,
-        alpha: Float = 0.5,
-        x: CGFloat = 0,
-        y: CGFloat =  -10,
-        blur: CGFloat = 4,
-        spread: CGFloat = 0)
-    {
-        shadowColor = color.cgColor
-        shadowOpacity = alpha
-        shadowOffset = CGSize(width: x, height: y)
-        shadowRadius = blur / 2.0
-        if spread == 0 {
-            shadowPath = nil
-        } else {
-            let dx = -spread
-            let rect = bounds.insetBy(dx: dx, dy: dx)
-            shadowPath = UIBezierPath(rect: rect).cgPath
-        }
-    }
-}
-
-extension UIImage {
-    func rotate(radians: Float) -> UIImage? {
-        var newSize = CGRect(origin: CGPoint.zero, size: self.size).applying(CGAffineTransform(rotationAngle: CGFloat(radians))).size
-        
-        newSize.width = floor(newSize.width)
-        newSize.height = floor(newSize.height)
-
-        UIGraphicsBeginImageContextWithOptions(newSize, false, self.scale)
-        let context = UIGraphicsGetCurrentContext()!
-
-        // Move origin to middle
-        context.translateBy(x: newSize.width/2, y: newSize.height/2)
-        // Rotate around middle
-        context.rotate(by: CGFloat(radians))
-        // Draw the image at its center
-        self.draw(in: CGRect(x: -self.size.width/2, y: -self.size.height/2, width: self.size.width, height: self.size.height))
-
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return newImage
-    }
 }
